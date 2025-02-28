@@ -69,7 +69,8 @@ $(NAME): $(O_FILES)
 	$(AR) $(NAME) $(O_FILES)
 
 clean:
-	$(RM) $(O_FILES_BONUS:${SRC}%=%) .bonus
+	$(RM) $(O_FILES_BONUS) .bonus
+	$(RM) $(O_FILES_BONUS:${SRC}%=%)
 
 fclean: clean
 	$(RM) $(NAME)

@@ -1,9 +1,7 @@
 .PHONY: all clean fclean re bonus
 
 NAME = libft.a
-
-HDER = libft.h
-HDERTRASH = $(HDER).gch
+SRC = source/
 
 CC = cc
 FLAG = -Wall -Wextra -Werror
@@ -46,7 +44,7 @@ ft_substr.c \
 ft_tolower.c \
 ft_toupper.c
 
-C_FILES_BONUS = $(C_FILES) \
+C_FILES_BONUS = \
 ft_lstadd_back_bonus.c \
 ft_lstadd_front_bonus.c \
 ft_lstclear_bonus.c \
@@ -57,17 +55,21 @@ ft_lstmap_bonus.c \
 ft_lstnew_bonus.c \
 ft_lstsize_bonus.c
 
+C_FILES := $(addprefix $(SRC), $(C_FILES))
+C_FILES_BONUS := $(addprefix $(SRC), $(C_FILES_BONUS))
+C_FILES_BONUS += $(C_FILES)
+
 O_FILES = $(C_FILES:.c=.o)
 O_FILES_BONUS = $(C_FILES_BONUS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(O_FILES)
-	$(CC) $(FLAG) -c $(C_FILES) $(HDER)
+	$(CC) -c $(FLAG) $(C_FILES)
 	$(AR) $(NAME) $(O_FILES)
 
 clean:
-	$(RM) $(O_FILES_BONUS) .bonus $(HDERTRASH)
+	$(RM) $(O_FILES_BONUS:${SRC}%=%) .bonus
 
 fclean: clean
 	$(RM) $(NAME)
@@ -77,6 +79,6 @@ re: fclean all
 bonus : .bonus
 
 .bonus : $(O_FILES_BONUS)
-	$(CC) $(FLAG) -c $(C_FILES_BONUS) $(HDER)
+	$(CC) -c $(FLAG) $(C_FILES_BONUS)
 	$(AR) $(NAME) $(O_FILES_BONUS)
 	touch .bonus

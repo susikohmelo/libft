@@ -6,7 +6,7 @@ Recreation of ( the most useful functions of ) the C standard library + a couple
 > The functions were made to follow the standard C library equivalents as closely as possible, *including any quirks they may have!* If you see something odd in one of the functions, it is likely because of this.
 
 ## Build & use
-Download the repo, run `make bonus` (or just `make` if you do not want the linked list functions)<br/>
+Download the repo, run `make bonus` or just `make` if you do not want the linked list functions.<br/>
 It should output a library file called `libft.a`, compile this with the code you want to use it in.
 
 ... Or just copy the source files - up to you!

@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:57:20 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/08 13:19:07 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:37:17 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,18 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
-	size_t	memoryuse;
+	size_t	byte_count;
 	void	*newmemory;
 
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));
 	if ((SIZE_MAX / size) < nmemb)
-		return (0);
-	memoryuse = nmemb * size;
-	newmemory = malloc(memoryuse);
+		return (malloc(0));
+	byte_count = nmemb * size;
+	newmemory = malloc(byte_count);
 	if (!newmemory)
 		return (newmemory);
-	i = 0;
-	while (i < memoryuse)
-	{
-		((unsigned char *)newmemory)[i] = 0;
-		i++;
-	}
+	while (byte_count)
+		((unsigned char *)newmemory)[--byte_count] = 0;
 	return (newmemory);
 }

@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:37:06 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/06 14:25:20 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:48:20 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	i = 0;
 	while (src[i])
-		i++;
+		++i;
 	if (size < 1)
 		return (i);
 	i = 0;
 	while (src[i] && i < (size - 1))
 	{
 		dst[i] = src[i];
-		i++;
+		++i;
 	}
 	dst[i] = '\0';
 	while (src[i])
-		i++;
+		++i;
 	return (i);
 }

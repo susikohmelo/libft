@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:49:02 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/06 14:26:14 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:48:34 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	while (s[i])
 	{
 		rstr[i] = f(i, s[i]);
-		i++;
+		++i;
 	}
 	rstr[i] = '\0';
 	return (rstr);

@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:35:18 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/05 15:39:14 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:41:18 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_lstsize(t_list *lst)
 	while (current_list)
 	{
 		current_list = current_list->next;
-		i++;
+		++i;
 	}
 	return (i);
 }

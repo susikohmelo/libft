@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:18:36 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/06 14:13:06 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:43:21 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		while (i < n)
 		{
 			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
+			--i;
 		}
 	}
 	else
 	{
-		i = n;
-		while (i > 0)
+		while (n > 0)
 		{
-			((unsigned char *)dest)[i - 1] = ((unsigned char *)src)[i - 1];
-			i--;
+			((unsigned char *)dest)[n - 1] = ((unsigned char *)src)[n - 1];
+			--n;
 		}
 	}
 	return (dest);

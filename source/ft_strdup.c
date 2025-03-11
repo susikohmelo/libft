@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 17:45:59 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/06 14:19:10 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:46:42 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strdup(const char *s)
 	while (s[i])
 	{
 		newstr[i] = ((char *)s)[i];
-		i++;
+		++i;
 	}
 	newstr[i] = '\0';
 	return (newstr);

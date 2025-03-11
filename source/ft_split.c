@@ -6,24 +6,21 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:20:45 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/07 11:49:24 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:46:12 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	set_me_free(char **ptrs, int indx)
+static inline int	set_me_free(char **ptrs, int indx)
 {
 	while (indx >= 0)
-	{
-		free(ptrs[indx]);
-		indx--;
-	}
+		free(ptrs[indx--]);
 	free(ptrs);
 	return (-42);
 }
 
-static void	assign_strs(char *ptr, const char *s, char c)
+static inline void	assign_strs(char *ptr, const char *s, char c)
 {
 	int	i;
 
@@ -31,12 +28,12 @@ static void	assign_strs(char *ptr, const char *s, char c)
 	while (s[i] != c && s[i])
 	{
 		ptr[i] = s[i];
-		i++;
+		++i;
 	}
 	ptr[i] = '\0';
 }
 
-static int	assign_ptrs(char **ptrs, const char *s, char c)
+static inline int	assign_ptrs(char **ptrs, const char *s, char c)
 {
 	int	a;
 	int	b;
@@ -47,24 +44,24 @@ static int	assign_ptrs(char **ptrs, const char *s, char c)
 	while (s[a])
 	{
 		if (s[a] == c)
-			a++;
+			++a;
 		else
 		{
 			b = 0;
 			while (s[a + b] != c && s[a + b])
-				b++;
+				++b;
 			ptrs[indx] = malloc((b + 1) * sizeof(char));
 			if (!ptrs[indx])
 				return (set_me_free(ptrs, indx - 1));
 			assign_strs(ptrs[indx], s + a, c);
-			indx++;
+			++indx;
 			a += b;
 		}
 	}
 	return (0);
 }
 
-static int	count_ptrs(const char *s, char c)
+static inline int	count_ptrs(const char *s, char c)
 {
 	int	i;
 	int	ptrc;
@@ -74,8 +71,8 @@ static int	count_ptrs(const char *s, char c)
 	while (s[i])
 	{
 		if (s[i] != c && (s[i + 1] == c || !s[i + 1]))
-			ptrc++;
-		i++;
+			++ptrc;
+		++i;
 	}
 	return (ptrc);
 }

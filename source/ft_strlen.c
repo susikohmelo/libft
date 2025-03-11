@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:28:57 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/10/28 15:30:38 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:48:28 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ size_t	ft_strlen(const char *str)
 
 	i = 0;
 	while (str[i])
-		i++;
+		++i;
 	return (i);
 }

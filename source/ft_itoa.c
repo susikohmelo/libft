@@ -6,13 +6,13 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 16:41:57 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/06 14:33:55 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:40:22 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	int_length(long n)
+static inline int	int_length(long n)
 {
 	int	i;
 
@@ -21,13 +21,13 @@ static int	int_length(long n)
 	i = 0;
 	if (n < 0)
 	{
-		i++;
+		++i;
 		n *= -1;
 	}
 	while (n > 0)
 	{
 		n /= 10;
-		i++;
+		++i;
 	}
 	return (i);
 }
@@ -48,15 +48,15 @@ char	*ft_itoa(int n)
 	str[ilen] = '\0';
 	if (nl < 0)
 	{
-		str[0] = '-';
+		*str = '-';
 		nl *= -1;
 	}
 	while (ilen > 0 && str[i] != '-')
 	{
 		str[i] = nl % 10 + '0';
 		nl /= 10;
-		ilen--;
-		i--;
+		--ilen;
+		--i;
 	}
 	return (str);
 }

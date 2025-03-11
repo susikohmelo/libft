@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 18:21:41 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/06 14:20:52 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:47:06 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 			newstring[i] = s1[i];
 		else
 			newstring[i] = s2[i - s1len];
-		i++;
+		++i;
 	}
 	newstring[i] = '\0';
 	return (newstring);

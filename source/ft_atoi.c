@@ -6,45 +6,37 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 14:21:00 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/04 18:56:23 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:33:34 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-static int	sign_error(int sign)
-{
-	if (sign < 0)
-		return (0);
-	else
-		return (-1);
-}
-
 int	ft_atoi(const char *nptr)
 {
 	int			i;
-	long		rval;
+	long		new_int;
 	int			sign;
 
 	i = 0;
-	rval = 0;
+	new_int = 0;
 	sign = 1;
 	while (nptr[i] && (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\r'
 			|| nptr[i] == '\n' || nptr[i] == '\v' || nptr[i] == '\f'))
-		i++;
+		++i;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
 			sign = -1;
-		i++;
+		++i;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		rval = rval * 10 + nptr[i] - '0';
-		if (LONG_MAX / 10 < rval * 10)
-			return (sign_error(sign));
-		i++;
+		new_int = new_int * 10 + nptr[i] - '0';
+		if (LONG_MAX / 10 < new_int * 10)
+			return (-(sign < 0));
+		++i;
 	}
-	return (rval * sign);
+	return (new_int * sign);
 }

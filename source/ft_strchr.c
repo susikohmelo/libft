@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:11:54 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/07 11:53:47 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:46:22 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (*s == '\0')
 			return (0);
-		s++;
+		++s;
 	}
 	return ((char *)s);
 }

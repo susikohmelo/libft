@@ -6,13 +6,13 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:41:32 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/06 14:22:53 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:48:03 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	has_nul(char *str, size_t size)
+static inline int	has_nul(char *str, size_t size)
 {
 	size_t	len;
 
@@ -21,7 +21,7 @@ static int	has_nul(char *str, size_t size)
 	{
 		if (!str[len])
 			return (1);
-		len++;
+		++len;
 	}
 	return (0);
 }
@@ -43,7 +43,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	while (dlen + i < size - 1 && src[i])
 	{
 		dst[dlen + i] = ((char *)src)[i];
-		i++;
+		++i;
 	}
 	dst[dlen + i] = '\0';
 	return (dlen + slen);

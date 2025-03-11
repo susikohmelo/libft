@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:41:35 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/07 11:52:04 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:49:04 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 					return ((char *)big + i);
 				if (little[subi + 1] != big[i + subi + 1])
 					break ;
-				subi++;
+				++subi;
 			}
 		}
-		i++;
+		++i;
 	}
 	return (0);
 }

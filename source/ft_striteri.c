@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:55:51 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/04 11:55:54 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:46:50 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	while (s[i])
 	{
 		f(i, s + i);
-		i++;
+		++i;
 	}
 }

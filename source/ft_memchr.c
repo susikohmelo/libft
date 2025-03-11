@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:30:11 by ljylhank          #+#    #+#             */
-/*   Updated: 2024/11/06 14:09:03 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:41:26 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (((const unsigned char *)s)[i] == (unsigned char)c)
 			return ((void *)s + i);
-		i++;
+		++i;
 	}
 	return (0);
 }

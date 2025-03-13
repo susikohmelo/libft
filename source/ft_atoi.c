@@ -6,7 +6,7 @@
 /*   By: ljylhank <ljylhank@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 14:21:00 by ljylhank          #+#    #+#             */
-/*   Updated: 2025/03/11 17:33:34 by ljylhank         ###   ########.fr       */
+/*   Updated: 2025/03/13 20:00:19 by ljylhank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_atoi(const char *nptr)
 	{
 		new_int = new_int * 10 + nptr[i] - '0';
 		if (LONG_MAX / 10 < new_int * 10)
-			return (-(sign < 0));
+			return (-(sign == 1));
 		++i;
 	}
 	return (new_int * sign);
